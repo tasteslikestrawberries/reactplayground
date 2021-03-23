@@ -12,6 +12,7 @@ import NavigationBar from './components/NavigationBar.js';
 import Home from './components/Home';
 import MasterForm from './components/Form';
 import Tablica from './components/Table';
+import Playground from './components/Playground';
 
 //stylesheet
 import "./App.css"
@@ -33,6 +34,10 @@ function App () {
 
 			<Route path="/table"> 
             	<Tablica/>
+            </Route >
+
+            <Route path="/playground"> 
+            	<Playground/>
             </Route >
 
 		

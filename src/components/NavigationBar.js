@@ -30,6 +30,7 @@ class NavigationBar extends React.Component{
 
              <Nav.Link as={Link} to="/form">Form</Nav.Link>
              <Nav.Link as={Link} to="/table">Table</Nav.Link>
+             <Nav.Link as={Link} to="/playground">Playground</Nav.Link>
   
       </Nav>
 
