@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/reactplayground/static/css/main.d1fb0794.chunk.css",
+    "main.js": "/reactplayground/static/js/main.76255018.chunk.js",
+    "main.js.map": "/reactplayground/static/js/main.76255018.chunk.js.map",
+    "runtime-main.js": "/reactplayground/static/js/runtime-main.ff25989a.js",
+    "runtime-main.js.map": "/reactplayground/static/js/runtime-main.ff25989a.js.map",
+    "static/css/2.658248ec.chunk.css": "/reactplayground/static/css/2.658248ec.chunk.css",
+    "static/js/2.da80fa77.chunk.js": "/reactplayground/static/js/2.da80fa77.chunk.js",
+    "static/js/2.da80fa77.chunk.js.map": "/reactplayground/static/js/2.da80fa77.chunk.js.map",
+    "index.html": "/reactplayground/index.html",
+    "static/css/2.658248ec.chunk.css.map": "/reactplayground/static/css/2.658248ec.chunk.css.map",
+    "static/css/main.d1fb0794.chunk.css.map": "/reactplayground/static/css/main.d1fb0794.chunk.css.map",
+    "static/js/2.da80fa77.chunk.js.LICENSE.txt": "/reactplayground/static/js/2.da80fa77.chunk.js.LICENSE.txt",
+    "static/media/c1.def2bc01.webp": "/reactplayground/static/media/c1.def2bc01.webp",
+    "static/media/c2.b580e101.webp": "/reactplayground/static/media/c2.b580e101.webp",
+    "static/media/c3.d6735871.webp": "/reactplayground/static/media/c3.d6735871.webp"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.ff25989a.js",
+    "static/css/2.658248ec.chunk.css",
+    "static/js/2.da80fa77.chunk.js",
+    "static/css/main.d1fb0794.chunk.css",
+    "static/js/main.76255018.chunk.js"
+  ]
+}
