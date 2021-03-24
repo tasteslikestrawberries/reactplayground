@@ -78,7 +78,7 @@ form {
   
 }
 
-.buba {
+.container1 {
   width: 300px;
   height: 500px;
   margin: auto;
@@ -88,7 +88,7 @@ form {
   
 }
 
-.buba2 {
+.container2 {
   width: 300px;
   height: 500px;
   margin: auto;
@@ -96,4 +96,9 @@ form {
   background-color: rgb(255, 0, 128);
   box-sizing: border-box;
   
+}
+
+.changebtn {
+  background-color: coral;
+  font-weight: bold;
 }
