@@ -30,21 +30,19 @@
     //SIMPLE ASYNC AWAIT
     //keyword await works only inside async functions
 
-    let value = await promise;
+async function myFunction() {
 
-    async function myFunction() {
+let promise = new Promise((resolve, reject) => {
+  setTimeout(() => resolve('done!'), 4000) 
 
-      let promise = new Promise((resolve, reject) => {
-        setTimeout(() => resolve('done!'), 1000) 
+});
 
-      });
-    
-      let result = await promise; // function execution pauses 
-      
-      alert(result); // function resumes when the promise settles: code shows 'done!' in 1 second
-    }
+let result = await promise; // function execution pauses 
 
-      myFunction();
+console.log(result); // function resumes when the promise settles: code shows 'done!' in 4 seconds
+}
+
+myFunction();
 
 
 
