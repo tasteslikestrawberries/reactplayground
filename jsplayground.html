@@ -4,7 +4,7 @@
 
 
   <script>
-    //SIMPLE ASYNC
+    //SIMPLE PROMISE
     const p = new Promise((resolve,reject) => {
         const a = 1+1;
         if (a==2) {resolve('Nifty!')} 
@@ -19,7 +19,7 @@
         console.log('This is in the finally ' + 'Settled'); //When the promise is settled, i.e either fulfilled or rejected, this callback function is executed
       });
 
-      //SIMPLE ASYNC AWAIT
+      //SIMPLE ASYNC 
 
       async function func() { //async keyword means a function always returns a promise
         return 1;             //in this case it returns a resolved promise with the result of 1
