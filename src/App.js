@@ -4,59 +4,53 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
+  //Link
 } from "react-router-dom";
 
 //components
-import NavigationBar from './components/NavigationBar.js';
+import Navigation from './components/Navigation.js';
 import Home from './components/Home';
 import MasterForm from './components/Form';
 import Tablica from './components/Table';
 import Playground from './components/Playground';
 
-//stylesheet
+//styles
 import "./App.css"
 
 
 function App () {
 
   return (
-     
+    <Router>  
 
-      <Router>  
-       		<NavigationBar/>  
+      <Navigation/>  
         
-		<Switch>
-	
-            <Route path="/form"> 
-            	<MasterForm/>
-            </Route >
+		  <Switch>
 
-			<Route path="/table"> 
-            	<Tablica/>
-            </Route >
+        <Route path="/form"> 
+          <MasterForm/>
+        </Route >
 
-            <Route path="/playground"> 
-            	<Playground/>
-            </Route >
+			  <Route path="/table"> 
+          <Tablica/>
+        </Route >
 
+        <Route path="/playground"> 
+          <Playground/>
+        </Route >
 		
-			<Route>
+			  <Route>
 			    <Home/>
-             </Route>
-           
-        </Switch>
+        </Route>   
 
-      </Router>
+      </Switch>
 
-  
+    </Router>
+
   )
 }
 
-
-
   export default App;
-
 
 
   /* - home is at the end of the router and IN switch so if no path (previous links) is loaded,
