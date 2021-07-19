@@ -6,44 +6,94 @@ const Playground = () => {
   const books = [
     {
     Name: 'Harry Potter and the Order of Phoenix' , 
-    [`Price${(' ($) ')}`]: 10, 
-    Year: '2000'},
+    //[`Price${(' ($) ')}`]: 10,
+    Price: 10, 
+    Year: '2000',
+    Available: String(null) //#1 https://www.samanthaming.com/tidbits/62-5-ways-to-convert-value-to-string/
+    },
 
     {Name: 'Ulysses' , 
     Price: 12, 
-    Year: '1960'},
+    Year: '1960',
+    Available: false.toString() //#2
+    },
 
     {Name: 'Don Quixote' , 
     Price: 10, 
-    Year: '2000'},
+    Year: '1987',
+    Available: false.toString()
+    },
 
     {Name: 'War and Peace' , 
     Price: 25, 
-    Year: '2009'},
+    Year: '2009',
+    Available: true.toString()
+    },
 
     {Name: 'The Great Gatsby' , 
     Price: 15, 
     Year: '2005',
+    Available: true.toString(),
     }
 ]
 
-let i = 0;
-books.map(book => {
-  book['ID'] = i+1;
-  i++;
-});
+/*When not to use map()
+Since map builds a new array, using it
+when you aren't using the returned array is
+an anti-pattern; use forEach or for...of instead.*/
 
-  //filter() method
-  const filteredBooks = books.filter((book) => {
-    return book.Price <= 20 //The less than or equal operator (<=) returns true if the left operand is less than or equal to the right operand, and false otherwise.
+  let i = 0;
+  books.forEach(book => {
+    book['ID'] = i+1;
+    i++;
+  });
+
+  //forEach() method
+  books.forEach((book) => {
+    console.log(book.Name);
   })
 
-    console.log(filteredBooks);
+  //Object.keys() method
+    console.log(Object.keys(books[0]));
 
-  //
+  //map() method
+  const booksYears = books.map((book) => {
+    return book.Year
+  });
 
+  console.log(booksYears)
 
+  //filter() method
+  //#1
+  const filteredBooks = books.filter((book) => {
+    return book.Year <= 2000 
+  })
   
+  console.log(filteredBooks);
+
+  //#2
+  const findAvailableBooks = books.filter((book) => {
+    return book.Available === true
+  });
+
+  console.log(findAvailableBooks);
+
+
+  //find()method - returns the first book that is found in the array
+  const foundBooks = books.find((book) => {
+    return book.Name === 'Ulysses'
+  });
+
+  console.log(foundBooks);
+
+   //reduce()method - runs a function on every single element in the array
+   //currentTotal - first argument is whatever first iteration of the array returned
+   const total = books.reduce((currentTotal, book) => {
+     return book.Price + currentTotal
+   }, 0)
+
+   console.log(total)
+
   return (
   
     <Table striped bordered hover variant="dark">
@@ -57,9 +107,9 @@ books.map(book => {
 
     <tbody>
   
-      {books.map((item) => (
-          <tr key={item.id}>
-            {Object.values(item).map((value) => (
+      {books.map((book) => (
+          <tr key={book.id}>
+            {Object.values(book).map((value) => (
               <td>{value}</td>
             ))}
           </tr>
