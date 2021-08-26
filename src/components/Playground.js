@@ -2,51 +2,56 @@ import React from 'react';
 import Table from 'react-bootstrap/Table'
 
 const Playground = () => {
-
+ 
   const books = [
     {
     Name: 'Harry Potter and the Order of Phoenix' , 
     //[`Price${(' ($) ')}`]: 10,
     Price: 10, 
     Year: '2000',
-    Available: String(null) //#1 https://www.samanthaming.com/tidbits/62-5-ways-to-convert-value-to-string/
+    Available: null // String(value) or .toString(value) https://www.samanthaming.com/tidbits/62-5-ways-to-convert-value-to-string/
     },
 
-    {Name: 'Ulysses' , 
+    {
+    Name: 'Ulysses' , 
     Price: 12, 
     Year: '1960',
-    Available: false.toString() //#2
+    Available: false 
     },
 
     {Name: 'Don Quixote' , 
     Price: 10, 
     Year: '1987',
-    Available: false.toString()
+    Available: false
     },
 
     {Name: 'War and Peace' , 
     Price: 25, 
     Year: '2009',
-    Available: true.toString()
+    Available: true
     },
 
     {Name: 'The Great Gatsby' , 
     Price: 15, 
     Year: '2005',
-    Available: true.toString(),
+    Available: true,
     }
 ]
+
+let i = 0;
+books.map(book => {
+  book['ID'] = i+1;
+  i++
+  Object.assign(book, ['ID']);
+});
+
+
+
 
 /*When not to use map()
 Since map builds a new array, using it
 when you aren't using the returned array is
 an anti-pattern; use forEach or for...of instead.*/
-
-  let i = 0;
-  books.forEach(book => {
-    book['ID'] = i+1;
-    i++;
-  });
 
   //forEach() method
   books.forEach((book) => {
@@ -110,7 +115,7 @@ an anti-pattern; use forEach or for...of instead.*/
       {books.map((book) => (
           <tr key={book.id}>
             {Object.values(book).map((value) => (
-              <td>{value}</td>
+              <td>{String(value)}</td>
             ))}
           </tr>
         ))}
