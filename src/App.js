@@ -1,4 +1,3 @@
-
 import React from 'react';
 import {
   BrowserRouter as Router,
@@ -13,6 +12,7 @@ import Home from './components/Home';
 import MasterForm from './components/Form';
 import Tablica from './components/Table';
 import Playground from './components/Playground';
+import CodePractice from './components/CodePractice'
 
 //styles
 import "./App.css"
@@ -37,6 +37,10 @@ function App () {
 
         <Route path="/playground"> 
           <Playground/>
+        </Route >
+
+        <Route path="/codepractice"> 
+          <CodePractice/>
         </Route >
 		
 			  <Route>

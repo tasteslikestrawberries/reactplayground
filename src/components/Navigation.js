@@ -18,6 +18,7 @@ const Navigation = () => {
              <Nav.Link as={Link} to="/form">Form</Nav.Link>
              <Nav.Link as={Link} to="/table">Table</Nav.Link>
              <Nav.Link as={Link} to="/playground">Playground</Nav.Link>
+             <Nav.Link as={Link} to="/codepractice">Code Practice</Nav.Link>
   
         </Nav>
       </Navbar>
