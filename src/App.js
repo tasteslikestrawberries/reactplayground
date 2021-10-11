@@ -12,7 +12,7 @@ import Home from './components/Home';
 import MasterForm from './components/Form';
 import Tablica from './components/Table';
 import Playground from './components/Playground';
-import CodePractice from './components/CodePractice'
+import CodePractice from './components/CodePractice.tsx';
 
 //styles
 import "./App.css"
