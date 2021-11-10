@@ -1,52 +1,55 @@
 <html>
-  <head><h1>Hello vanilla!</h1></head>
-<body>jsplayground</body>
-
+  <head>
+    <h1>Hello vanilla!</h1>
+  </head>
+  <body>
+    jsplayground
+  </body>
 
   <script>
     //SIMPLE PROMISE
-    const p = new Promise((resolve,reject) => {
-        const a = 1+1;
-        if (a==2) {resolve('Nifty!')} 
-        else {reject('Oops!')}      
+    const p = new Promise((resolve, reject) => {
+      const a = 1 + 1;
+      if (a == 2) {
+        resolve("Nifty!");
+      } else {
+        reject("Oops!");
+      }
     });
-      
-      p.then ((message) => {                                   //then i catch su metode objekta zato se koristi (p.then)
-        console.log('This is in the then ' + message);
-      }).catch((message) => {
-        console.log('This is in the catch ' + message);
-      }).finally((message) => {
-        console.log('This is in the finally ' + 'Settled'); //When the promise is settled, i.e either fulfilled or rejected, this callback function is executed
+
+    p.then((message) => {
+      //then i catch su metode objekta zato se koristi (p.then)
+      console.log("This is in the then " + message);
+    })
+      .catch((message) => {
+        console.log("This is in the catch " + message);
+      })
+      .finally((message) => {
+        console.log("This is in the finally " + "Settled"); //When the promise is settled, i.e either fulfilled or rejected, this callback function is executed
       });
 
-      //SIMPLE ASYNC 
+    //SIMPLE ASYNC
 
-      async function func() { //async keyword means a function always returns a promise
-        return 1;             //in this case it returns a resolved promise with the result of 1
-      }                  //we could also return a promise explicitly: return Promise.resolve(1); 
+    async function func() {
+      //async keyword means a function always returns a promise
+      return 1; //in this case it returns a resolved promise with the result of 1
+    } //we could also return a promise explicitly: return Promise.resolve(1);
 
-       func().then(alert);
+    func().then(alert);
 
     //SIMPLE ASYNC AWAIT
     //keyword await works only inside async functions
 
-async function myFunction() {
+    async function myFunction() {
+      let promise = new Promise((resolve, reject) => {
+        setTimeout(() => resolve("done!"), 4000);
+      });
 
-let promise = new Promise((resolve, reject) => {
-  setTimeout(() => resolve('done!'), 4000) 
+      let result = await promise; // function execution pauses
 
-});
+      console.log(result); // function resumes when the promise settles: code shows 'done!' in 4 seconds
+    }
 
-let result = await promise; // function execution pauses 
-
-console.log(result); // function resumes when the promise settles: code shows 'done!' in 4 seconds
-}
-
-myFunction();
-
-
-
-    </script>
-
-
+    myFunction();
+  </script>
 </html>
